@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>Pixel Snake — Ретро-змейка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="pixel-badge" aria-hidden="true">★</div>
+      <p class="eyebrow">ARCADE CLASSIC · 8-BIT EDITION</p>
+      <h1>PIXEL <span>SNAKE</span></h1>
+      <p class="subtitle">Собирай яблоки. Расти. Не кусай себя.</p>
+    </header>
+
+    <section class="game-shell" aria-label="Игра Змейка">
+      <div class="topbar">
+        <div class="stat">
+          <span class="stat-label">СЧЁТ</span>
+          <strong id="score">000</strong>
+        </div>
+        <div class="status-pill" id="status-pill"><span class="status-dot"></span><span id="status-text">ГОТОВ?</span></div>
+        <div class="stat stat-right">
+          <span class="stat-label">РЕКОРД</span>
+          <strong id="best">000</strong>
+        </div>
+      </div>
+
+      <div class="board-frame">
+        <canvas id="game" width="480" height="480" aria-label="Игровое поле. Управление стрелками или WASD."></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <div class="overlay-icon" id="overlay-icon">▶</div>
+            <h2 id="overlay-title">ГОТОВ ИГРАТЬ?</h2>
+            <p id="overlay-message">Собирай красные яблоки и избегай стен и собственного хвоста.</p>
+            <button id="start-btn" class="primary-btn">НАЧАТЬ ИГРУ <span>→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-footer">
+        <div class="legend"><span class="legend-swatch apple"></span> ЯБЛОКО <span class="legend-swatch snake-swatch"></span> ЗМЕЙКА</div>
+        <div class="level-label">СКОРОСТЬ: <span id="speed-label">1 УРОВЕНЬ</span></div>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="info-card controls-card">
+        <div class="card-heading"><span class="heading-icon">⌨</span><h2>УПРАВЛЕНИЕ</h2></div>
+        <div class="key-row"><span class="keycap">↑</span><span class="keycap">←</span><span class="keycap">↓</span><span class="keycap">→</span><p>или <b>W A S D</b> — движение</p></div>
+        <div class="key-row"><span class="keycap wide">SPACE</span><p>пауза / продолжить</p></div>
+        <div class="key-row"><span class="keycap wide">ENTER</span><p>начать заново после проигрыша</p></div>
+        <p class="hint">На телефоне можно пользоваться кнопками ниже игрового поля.</p>
+      </article>
+      <article class="info-card goal-card">
+        <div class="card-heading"><span class="heading-icon">✦</span><h2>ТВОЯ ЦЕЛЬ</h2></div>
+        <div class="goal-number">+10 <span>ОЧКОВ</span></div>
+        <p>За каждое яблоко змейка становится длиннее, а игра постепенно ускоряется.</p>
+        <div class="mini-progress"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <p class="hint">Рекорд сохраняется в этом браузере автоматически.</p>
+      </article>
+    </section>
+
+    <nav class="touch-controls" aria-label="Сенсорное управление">
+      <button class="touch-btn up" data-dir="up" aria-label="Вверх">▲</button>
+      <button class="touch-btn left" data-dir="left" aria-label="Влево">◀</button>
+      <button class="touch-btn down" data-dir="down" aria-label="Вниз">▼</button>
+      <button class="touch-btn right" data-dir="right" aria-label="Вправо">▶</button>
+    </nav>
+
+    <footer class="page-footer"><span>PIXEL SNAKE v1.0</span><span>СДЕЛАНО С ♥ И JAVASCRIPT</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
